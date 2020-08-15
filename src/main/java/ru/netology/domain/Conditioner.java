@@ -1,17 +1,15 @@
-package ru.netology;
+package ru.netology.domain;
 
 public class Conditioner {
 
     private String name;
-    private int maxTemperature = 18;
-    private int minTemperature = -5;
-    private int currentTemperature = 0;
+    private int maxTemperature;
+    private int minTemperature;
+    private int currentTemperature;
     private boolean on;
 
 
-
-
-        public String getName() {
+    public String getName() {
         return name;
     }
 
@@ -38,8 +36,32 @@ public class Conditioner {
     public int getCurrentTemperature() {
         return currentTemperature;
     }
-    public void setCurrentTemperature(){
-            this.currentTemperature = currentTemperature;
+
+    public void setIncreaseCurrentTemperature(int currentTemperature) {
+        if (currentTemperature > maxTemperature) {
+            return;
+        }
+        if (currentTemperature < minTemperature) {
+            return;
+        }
+        while (currentTemperature < maxTemperature) {
+            System.out.println(+currentTemperature++);
+
+        }
+        this.currentTemperature = currentTemperature;
+    }
+    public void setDecreaseCurrentTemperature(int currentTemperature) {
+        if (currentTemperature > maxTemperature) {
+            return;
+        }
+        if (currentTemperature < minTemperature) {
+            return;
+        }
+        while (currentTemperature > minTemperature) {
+            System.out.println(+currentTemperature--);
+
+        }
+        this.currentTemperature = currentTemperature;
     }
 
     public boolean isOn() {
@@ -47,19 +69,23 @@ public class Conditioner {
     }
 
     public void setOn(boolean on) {
-        this.on = on;
+        on = true;
+        this.on = true;
+
     }
-    public void setCurrentTemperature(int CurrentTemperature) {
-        if (currentTemperature < maxTemperature) {
-            return;
-        }
-        if (currentTemperature > minTemperature) {
-            return;
-        }
-        while (currentTemperature <= maxTemperature) {
-            System.out.println(+currentTemperature--);
-        }
-    }
+
+//
+//    public void setCurrentTemperature(int CurrentTemperature) {
+//        if (currentTemperature < maxTemperature) {
+//            return;
+//        }
+//        if (currentTemperature > minTemperature) {
+//            return;
+//        }
+//        while (currentTemperature <= maxTemperature) {
+//            System.out.println(+currentTemperature--);
+//        }
+//    }
 
 
 //        for(int i = 0; i >= maxTemperature; i++) {
