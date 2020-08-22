@@ -38,7 +38,7 @@
                 <version>0.8.5</version>
                 <executions>
                     <execution>
-                        <id>default-prepare-agent</id>
+                        <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -57,7 +57,7 @@
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>METHOD</element>
+                                    <element>PACKAGE</element>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>
